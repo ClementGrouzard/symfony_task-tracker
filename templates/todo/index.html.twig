@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="d-inline me-3">Here are my tasks for today:</h1> <i class="fas fa-edit"></i>
+
+
+<div class="example-wrapper">
+
+    
+    <ul>
+        {% for task in tasks %}
+            <li>{{task.id}}) {{task.name}}</li> <button>Postpone</button> <button>Delete</button>
+        {% endfor %}
+    </ul>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Browse {{ category ? category : 'All Categories' }}</h1>
+
+    <h2 class="mt-5 mb-4">Filter by Category</h2>
+
+    <ul class="genre-list ps-0 mt-2 mb-3">
+        <li class="d-inline">
+            <a class="btn btn-primary btn-sm" href="{{ path('app_browse', {
+                slug: 'web-dev'
+            }) }}">Web Development</a>
+        </li>
+        <li class="d-inline">
+            <a class="btn btn-primary btn-sm" href="{{ path('app_browse', {
+                slug: 'medicine'
+            }) }}">Medicine</a>
+        </li>
+        <li class="d-inline">
+            <a class="btn btn-primary btn-sm" href="{{ path('app_browse', {
+                slug: 'france-history'
+            }) }}">History of France</a>
+        </li>
+    </ul>
+{% endblock %}
