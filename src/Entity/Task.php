@@ -45,7 +45,7 @@ class Task
         return $this->due_date;
     }
 
-    public function setDueDate(?\DateTimeInterface $due_date): self
+    public function setDueDate(?\DateTimeInterface $due_date): self 
     {
         $this->due_date = $due_date;
 

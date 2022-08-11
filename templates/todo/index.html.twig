@@ -5,17 +5,32 @@
 {% block body %}
 
 <div class="container">
-    <h1 class="d-inline me-3">Here are my tasks for today:</h1> <i class="fas fa-edit"></i>
+    <h1 class="d-inline me-3">Here are my tasks for today:</h1>
 
 
-<div class="example-wrapper">
+    <div class="example-wrapper">
 
     
     <ul>
         {% for task in tasks %}
-            <li>{{task.id}}) {{task.name}}</li> <button>Postpone</button> <button>Delete</button>
+            <div class='todo-list' {{ stimulus_controller('task-controls', {
+                infoUrl: path('api_tasks_get_one', { id: loop.index })
+            }) }}>
+                <li >{{task.id}}) {{task.name}} <button>Update Task</button></li> 
+                <a href="#" 
+                style="background-color: white;
+                        padding: 5px;" 
+                {{ stimulus_action('task-controls', 'start') }}>
+                            <i class="fa-solid fa-stopwatch">Start Pomodoro Session</i>
+                        </a>
+                        <button>Postpone</button> 
+                        <button>Delete</button>
+            </div>
         {% endfor %}
     </ul>
-    
+    <h1 class="d-inline me-3">Add a task:</h1>
+        <div class="add-form">
+            {{ form(form) }}
+        </div>
 </div>
 {% endblock %}
