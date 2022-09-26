@@ -16,7 +16,7 @@
             <div class='todo-list' {{ stimulus_controller('task-controls', {
                 infoUrl: path('api_tasks_get_one', { id: loop.index })
             }) }}>
-                <li >{{task.id}}) {{task.name}} <button>Update Task</button></li> 
+                <li > {{task.name}} <button>Update Task</button></li> 
                 <a href="#" 
                 style="background-color: white;
                         padding: 5px;" 
