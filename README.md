@@ -4,6 +4,7 @@
 
 TODO : 
 
-1) Implement Delete Button, Postpone button and Update Button;
-2) Implement a logger to save todolists;
-3) Connect the app with a front-end framework
+1) Implement Update Button;
+2) Connect the app with a front-end framework
+3) Implement a logger to save todolists;
+
