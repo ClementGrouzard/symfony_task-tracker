@@ -1,6 +1,6 @@
 # symfony_task-tracker
 
-(Pending project) Simple task-tracker connected to a MariaDB database to practice the framework symfony. 
+(Ongoing project) Simple task-tracker connected to a MariaDB database to practice the framework symfony. 
 
 TODO : 
 
