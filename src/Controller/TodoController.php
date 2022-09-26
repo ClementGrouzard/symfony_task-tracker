@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Form\TaskType;
 use App\Repository\TaskRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -44,6 +45,8 @@ class TodoController extends AbstractController
 
         }
         
+        $due_date = 'Today'; // TODO display the actual date of today
+
         return $this->render('todo/index.html.twig', [
             'title' => 'My Task Manager',
             'tasks' => $tasks,
@@ -52,6 +55,17 @@ class TodoController extends AbstractController
         ]);
         
         
+    }
+
+    #[Route('/{id}', name: 'app_task_delete', methods: ['POST'])]
+
+    public function delete(Request $request, Task $task, TaskRepository $taskRepository, EntityManagerInterface $entityManager): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$task->getId(), $request->request->get('_token'))) {
+            $taskRepository->remove($task, true);
+        }
+
+        return $this->redirectToRoute('app_todo', [], Response::HTTP_SEE_OTHER);
     }
     
 

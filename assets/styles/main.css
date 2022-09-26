@@ -19,8 +19,8 @@
 }
 
 body {
-    background-color: #17242C;
-    color: #fff;
+    background-color: lightblue;
+    color: #17242C;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -31,7 +31,15 @@ body {
 }
 
 .add-form {
+    color: #17242C;
+    background-color: pink;
     padding: 7px 0;
+    width: 100%;
+    margin: auto;
+}
+
+.add-form-centered {
     width: 50%;
     margin: auto;
+
 }
