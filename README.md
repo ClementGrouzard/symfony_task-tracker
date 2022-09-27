@@ -5,6 +5,6 @@
 TODO : 
 
 1) Implement Update Button;
-2) Connect the app with a front-end framework
-3) Implement a logger to save todolists;
+2) Implement the front-end with Angular: develop the templates and the scripts to create schedules from todolists;
+3) Implement a logger to save todolists and generated schedules;
 
